@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รถบ้านแชมป์ - หน้าแรก</title>
+    <link rel="icon" href="/assets/footer.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+
+    <!-- header -->
+    <div id="header"></div>
+
+    <!-- banner -->
+    <section class="relative w-full h-[32rem]"> <img src="/assets/banner1.png" alt="showroom"
+            class="absolute inset-0 w-full h-full object-cover">
+
+        <!-- overlay (darken slightly for text readability) -->
+        <div class="absolute inset-0 bg-black/40"></div>
+
+        <!-- text -->
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-[#EFE6DD] px-4">
+            <h1 class="text-5xl sm:text-6xl font-bold drop-shadow-lg mb-4"> รถบ้านแชมป์ ชุมพร </h1>
+            <p class="text-xl sm:text-3xl font-semibold text-[color:var(--light-cream)] drop-shadow-md"> รถบ้านพร้อมลุย
+                ราคากันเอง ต้องรถบ้านแชมป์ </p>
+            <a href="#cars"
+                class="mt-8 inline-block px-6 py-3 bg-[color:var(--warm-rust)] text-white font-medium rounded-xl hover:bg-[color:var(--deep-olive)] transition">
+                ดูรถทั้งหมด</a>
+        </div>
+    </section>
+
+    <!-- search & filter -->
+    <div class="mx-auto max-w-screen-xl px-4 py-6 sm:px-6 lg:px-8 sm:py-8">
+        <h1 class="text-4xl sm:text-5xl">รถบ้านแชมป์</h1>
+        <p class="mt-2 text-base sm:text-xl sm:mt-4">ค้นหารถยนต์ที่คุณชอบ</p>
+    </div>
+
+    <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <form id="searchForm" class="flex flex-wrap md:flex-nowrap items-center w-full gap-4 sm:gap-6">
+
+            <!-- search input -->
+            <div class="relative w-full md:w-[1240px]"> <input type="search" id="search-input"
+                    class="block w-full p-2.5 z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border-gray-50 border-2 border border-gray-300 focus:border-blue-500"
+                    placeholder="ค้นหารถยนต์..." required /> </div>
+
+            <!-- filter -->
+            <div
+                class="ml-0 md:ml-auto w-full grid grid-cols-6 auto-rows-min gap-3 md:flex md:flex-nowrap md:items-center md:justify-end md:gap-2">
+
+                <!-- dropdown 1 : Make -->
+                <div class="relative col-span-3">
+                    <button data-dropdown="dropdown1" type="button"
+                        class="dropdown-btn w-full md:w-auto shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-gray-900 bg-gray-100 border border-gray-300 rounded-lg hover:bg-gray-200 focus:ring-2 focus:outline-none focus:ring-blue-300">เลือกยี่ห้อ
+                        <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 4 4 4-4" />
+                        </svg>
+                    </button>
+
+                    <!-- dropdown menu -->
+                    <div id="dropdown1"
+                        class="dropdown hidden absolute left-0 md:left-auto z-10 bg-white divide-gray-100 rounded-lg shadow-sm w-44 mt-2">
+                        <ul class="py-1 text-sm text-gray-700">
+                            <li>
+                                <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="all">เลือกยี่ห้อ</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="Isuzu">Isuzu</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="Mitsubishi">Mitsubishi</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="Toyota">Toyota</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="Nissan">Nissan</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="Honda">Honda</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- dropdown 2 : Model -->
+                <div class="relative col-span-3">
+                    <button data-dropdown="dropdown2" type="button"
+                        class="dropdown-btn w-full md:w-auto shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-gray-900 bg-gray-100 border border-gray-300 rounded-lg hover:bg-gray-200 focus:ring-2 focus:outline-none focus:ring-blue-300">เลือกรุ่นรถ
+                        <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 4 4 4-4" />
+                        </svg>
+                    </button>
+
+                    <!-- dropdown menu -->
+                    <div id="dropdown2"
+                        class="dropdown hidden absolute left-0 md:left-auto z-10 bg-white divide-gray-100 rounded-lg shadow-sm w-44 mt-2">
+                        <ul class="py-1 text-sm text-gray-700">
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="all">เลือกรุ่นรถ</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="Vios">Vios</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="D-Max">D-Max</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="Triton">Triton</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="Dragon_Eyes">Dragon Eyes</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="Vigo_Champ">Vigo Champ</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="Ventury">Ventury</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="Fortuner">Fortuner</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="Commuter">Commuter</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="Prerunner">Prerunner</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="Navara">Navara</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="City">City</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="Almera">Almera</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="Vigo">Vigo</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="Cameo">Cameo</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- dropdown 3 : Transmission -->
+                <div class="relative col-span-2 md:col-span-1">
+                    <button data-dropdown="dropdown3" type="button"
+                        class="dropdown-btn w-full md:w-auto shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-gray-900 bg-gray-100 border border-gray-300 rounded-lg hover:bg-gray-200 focus:ring-2 focus:outline-none focus:ring-blue-300">เกียร์
+                        <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 4 4 4-4" />
+                        </svg>
+                    </button>
+
+                    <!-- dropdown menu -->
+                    <div id="dropdown3"
+                        class="dropdown hidden absolute left-0 md:left-auto z-10 bg-white divide-gray-100 rounded-lg shadow-sm w-44 mt-2">
+                        <ul class="py-1 text-sm text-gray-700">
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="all">เกียร์</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="เกียร์ออโต้">เกียร์ออโต้</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100"
+                                    data-value="เกียร์ธรรมดา">เกียร์ธรรมดา</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- dropdown 4 : Year -->
+                <div class="relative col-span-2 md:col-span-1">
+                    <button data-dropdown="dropdown4" type="button"
+                        class="dropdown-btn w-full md:w-auto shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-gray-900 bg-gray-100 border border-gray-300 rounded-lg hover:bg-gray-200 focus:ring-2 focus:outline-none focus:ring-blue-300">ปี
+                        <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 4 4 4-4" />
+                        </svg>
+                    </button>
+
+                    <!-- dropdown menu -->
+                    <div id="dropdown4"
+                        class="dropdown hidden absolute left-0 md:left-auto z-10 bg-white divide-gray-100 rounded-lg shadow-sm w-44 mt-2">
+                        <ul class="py-1 text-sm text-gray-700">
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100">ปี</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100">2020-2015</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100">2015-2010</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100">2010-2005</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100">2005-2000</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100">1997</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- dropdown 5 : Price -->
+                <div class="relative col-span-2 md:col-span-1">
+                    <button data-dropdown="dropdown5" type="button"
+                        class="dropdown-btn w-full md:w-auto shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-gray-900 bg-gray-100 border border-gray-300 rounded-lg hover:bg-gray-200 focus:ring-2 focus:outline-none focus:ring-blue-300">ราคา
+                        <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 4 4 4-4" />
+                        </svg>
+                    </button>
+
+                    <!-- dropdown menu -->
+                    <div id="dropdown5"
+                        class="dropdown hidden absolute z-10 bg-white divide-gray-100 rounded-lg shadow-sm w-34 sm:w-44 mt-2 text-[13px]">
+                        <ul class="py-1 text-sm text-gray-700">
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100">ราคา</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100">300k-200k</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100">200k-100k</button>
+                            </li>
+                            <li> <button type="button" class="w-full px-4 py-2 hover:bg-gray-100">100k-50k</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+
+    <!-- cars card -->
+    <main class="mx-auto max-w-screen-xl p-4 py-8">
+        <div id="cars" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"></div>
+    </main>
+
+    <!-- footer -->
+    <div id="footer"></div>
+
+    <script type="module" src="./scripts/cars.js"></script>
+    <script type="module" src="./scripts/filter.js"></script>
+
+</body>
+
+</html>

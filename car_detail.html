@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>รถบ้านแชมป์ - ข้อมูลรถ</title>
+    <link rel="icon" href="/assets/footer.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <main class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+
+        <!-- Title -->
+        <div class="flex items-center justify-between gap-4 mb-4">
+            <h1 id="car-title" class="text-xl sm:text-3xl font-bold leading-tight"></h1>
+            <span id="car-price" class="text-xl sm:text-3xl font-bold text-right"></span>
+        </div>
+
+        <!-- Gallery -->
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+
+            <!-- Large hero image (spans full width / all columns) -->
+            <div class="group relative block col-span-1 md:col-span-5 overflow-hidden rounded-lg shadow">
+                <div id="hero-swiper"
+                    class="swiper w-full aspect-[4/3] sm:aspect-[16/9] md:h-[32rem] bg-[var(--light-cream)]">
+                    <div class="swiper-wrapper">
+                        <!-- Slides will be inserted by JS -->
+                    </div>
+                    <!-- Navigation arrows -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+
+            <!-- Thumbnails: row on mobile, 5-grid on md+ -->
+            <div class="md:col-span-5">
+                <div class="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-2 -mx-1 px-1
+                md:grid md:grid-cols-5 md:gap-4 md:overflow-visible md:snap-none md:pb-0 md:mx-0 md:px-0">
+
+                    <div
+                        class="group relative overflow-hidden rounded-lg shadow flex-none w-28 h-28 snap-start md:w-auto md:h-48">
+                        <img id="thumb-1" src="/assets/placeholder.jpg" alt="thumb-1" loading="lazy"
+                            class="w-full h-full object-cover" />
+                    </div>
+
+                    <div
+                        class="group relative overflow-hidden rounded-lg shadow flex-none w-28 h-28 snap-start md:w-auto md:h-48">
+                        <img id="thumb-2" src="/assets/placeholder.jpg" alt="thumb-2" loading="lazy"
+                            class="w-full h-full object-cover" />
+                    </div>
+
+                    <div
+                        class="group relative overflow-hidden rounded-lg shadow flex-none w-28 h-28 snap-start md:w-auto md:h-48">
+                        <img id="thumb-3" src="/assets/placeholder.jpg" alt="thumb-3" loading="lazy"
+                            class="w-full h-full object-cover" />
+                    </div>
+
+                    <div
+                        class="group relative overflow-hidden rounded-lg shadow flex-none w-28 h-28 snap-start md:w-auto md:h-48">
+                        <img id="thumb-4" src="/assets/placeholder.jpg" alt="thumb-4" loading="lazy"
+                            class="w-full h-full object-cover" />
+                    </div>
+
+                    <div
+                        class="group relative overflow-hidden rounded-lg shadow flex-none w-28 h-28 snap-start md:w-auto md:h-48">
+                        <img id="thumb-5" src="/assets/placeholder.jpg" alt="thumb-5" loading="lazy"
+                            class="w-full h-full object-cover" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Details -->
+        <section class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Left: Description -->
+            <div class="md:col-span-2">
+                <div class="bg-white rounded-xl shadow-sm p-5">
+                    <h2 class="text-2xl font-bold mb-3">รายละเอียดรถ</h2>
+                    <p id="car-desc" class="text-2xl font-semibold mb-3"></p>
+
+                    <div>
+                        <ul id="desc-list" class="list-disc pl-5 space-y-1 text-base"></ul>
+                    </div>
+
+                    <p class="mt-4 text-base">และ อื่นๆ จำหน่าย ราคาถูกกว่าป้ายแดง
+                        !!!</p>
+                </div>
+            </div>
+
+            <!-- Right: Specs -->
+            <aside>
+                <div class="bg-white rounded-xl shadow-sm p-5">
+                    <h2 class="text-2xl font-semibold mb-3">สเปกรถ</h2>
+                    <dl class="text-base grid grid-cols-2 gap-x-4 gap-y-2">
+                        <dt class="text-gray-500">ยี่ห้อ: </dt>
+                        <dd id="spec-make" class="font-medium"></dd>
+                        <dt class="text-gray-500">รุ่น: </dt>
+                        <dd id="spec-model" class="font-medium"></dd>
+                        <dt class="text-gray-500">ปี: </dt>
+                        <dd id="spec-year" class="font-medium"></dd>
+                        <dt class="text-gray-500">ราคา: </dt>
+                        <dd id="spec-price" class="font-medium"></dd>
+                        <dt class="text-gray-500">เลขไมล์: </dt>
+                        <dd id="spec-mileage" class="font-medium"></dd>
+                        <dt class="text-gray-500">เกียร์: </dt>
+                        <dd id="spec-trans" class="font-medium"></dd>
+                    </dl>
+
+                    <a href="../index.html"
+                        class="mt-5 inline-flex w-full justify-center items-center px-4 py-2 rounded-lg bg-[#6a826d] text-white hover:bg-(--deep-olive)">
+                        ค้าหารถรุ่นอื่น ๆ
+                    </a>
+                </div>
+            </aside>
+        </section>
+
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="./scripts/car-detail.js"></script>
+</body>
+
+</html>

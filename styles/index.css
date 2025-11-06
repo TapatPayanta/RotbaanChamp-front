@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Maitree:wght@400;600&family=Sriracha&display=swap');
+
+
+:root {
+  --deep-olive: #3C4A3E;
+  --warm-rust: #C77C64;
+  --light-cream: #EFE6DD;
+  --dark-charcoal: #4A4A48;
+
+  --font-heading: "Sriracha", cursive;
+  --font-body: "Maitree", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--light-cream);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+header,
+nav,
+footer {
+  font-family: var(--font-heading);
+}
