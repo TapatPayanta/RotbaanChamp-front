@@ -1,4 +1,3 @@
-// frontend/scripts/cars.js
 import { fmtPrice, fmtKm } from "./format.js";
 import { mountPartials } from "./ui.js";
 

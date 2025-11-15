@@ -1,4 +1,3 @@
-// frontend/scripts/filter.js
 import { getCarsData, renderCars, carsReady } from "./cars.js";
 
 const searchForm = document.getElementById("searchForm");

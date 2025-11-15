@@ -1,7 +1,5 @@
-// detail page: hero uses Swiper; 5 thumbnails stay static; thumbs jump hero instantly
 import { mountPartials } from "./ui.js";
 import { fmtPrice, fmtKm } from "./format.js";
-
 
 function getId() {
   const url = new URL(window.location.href);
@@ -16,7 +14,6 @@ async function loadCar(id) {
   return res.json();
 }
 
-
 function splitDescription(desc) {
   if (!desc) return [];
   const parts = desc
@@ -25,7 +22,6 @@ function splitDescription(desc) {
     .filter(Boolean);
   return parts.length ? parts : [desc.trim()];
 }
-
 
 const $ = (sel) => document.querySelector(sel);
 const byId = (id) => document.getElementById(id);
@@ -45,7 +41,6 @@ function renderSpecs(car) {
   put("spec-mileage", fmtKm(car.mileage));
   put("spec-trans", car.transmission || "-");
 }
-
 
 function renderGallery(images = []) {
   const placeholder = "/assets/placeholder.jpg";
@@ -87,8 +82,6 @@ function renderGallery(images = []) {
     imgEl.style.transform = `scale(${scale})`;
   }
 
-
-
   sources.forEach((src) => {
     const slide = document.createElement("div");
     slide.className = "swiper-slide";
@@ -106,7 +99,6 @@ function renderGallery(images = []) {
     if (img.complete && img.naturalWidth) tuneFit(box, img);
     else img.addEventListener("load", () => tuneFit(box, img));
   });
-
 
   // 2) Init/update Swiper with loop + correct index handling
   if (window.heroSwiper) {
@@ -189,7 +181,6 @@ function renderGallery(images = []) {
   highlightThumb(0);
 }
 
-
 function renderDescription(car) {
   const p = byId("car-desc");
   if (p) p.textContent = `${car.make} ${car.model} ${car.year}`;
@@ -204,7 +195,6 @@ function renderDescription(car) {
     ul.appendChild(li);
   });
 }
-
 
 (async () => {
   await mountPartials();
